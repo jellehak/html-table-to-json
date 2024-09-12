@@ -10,7 +10,9 @@ $ npm install html-table-to-json
 
 ## CLI Usage
 ```sh
-npx html-table-to-json --name "Your Name"
+npx html-table-to-json --help
+npx html-table-to-json samples/table.html
+npx html-table-to-json samples/table.html -p
 ```
 
 ## Usage

@@ -8,12 +8,17 @@ program
     .version('1.0.0')
     .description('A simple CLI tool')
     .argument('<string>', 'file')
-    //   .option('-n, --name <type>', 'Specify your name')
+    .option('-p, --pretty', 'Pretty print the JSON')
     .action((str, options) => {
         const content = readFileSync(str, 'utf8')
-        const jsonTables = HtmlTableToJson.parse(content);
+        const jsonTables = HtmlTableToJson.parse(content)
 
-        console.log(jsonTables.results);
+        if(options.pretty) {
+            console.log(JSON.stringify(jsonTables.results, null, 2))
+            return
+        }
+
+        console.log(JSON.stringify(jsonTables.results))
     });
 
-program.parse(process.argv);
+program.parse(process.argv)
