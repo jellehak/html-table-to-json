@@ -1,7 +1,5 @@
-'use strict'
-
-const test = require('ava')
-const HtmlTableToJson = require('.')
+import test from 'ava';
+import HtmlTableToJson from './index.js'
 
 const singleEmpty = '<table></table>'
 const doubleEmpty = `${singleEmpty}${singleEmpty}`

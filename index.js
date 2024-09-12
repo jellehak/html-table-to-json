@@ -1,8 +1,6 @@
-'use strict'
+import * as cheerio from 'cheerio';
 
-const cheerio = require('cheerio')
-
-class HtmlTableToJson {
+export class HtmlTableToJson {
 	constructor(html, options = {}) {
 		if (typeof html !== 'string') {
 			throw new TypeError('html input must be a string')
@@ -97,4 +95,4 @@ class HtmlTableToJson {
 	}
 }
 
-module.exports = HtmlTableToJson
+export default HtmlTableToJson;
